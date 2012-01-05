@@ -10,6 +10,7 @@ include_directories(${BULLET_DIR}/src
 
 set(BULLET_LIBS BulletFileLoader BulletSoftBody BulletDynamics BulletCollision LinearMath)
 
+link_directories("/usr/local/lib")
 
 if (BUILD_PERCEPTION)
   find_package(PCL 1.3)
@@ -55,3 +56,6 @@ target_link_libraries(test_action simulation)
 
 add_executable(test_collision_detection test_collision_detection.cpp)
 target_link_libraries(test_collision_detection simulation)
+
+add_executable(test_kb_control test_kb_control.cpp kb_control.cpp)
+target_link_libraries(test_kb_control simulation)

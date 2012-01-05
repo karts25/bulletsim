@@ -207,9 +207,7 @@ bool RaveRobotKinematicObject::Manipulator::moveByIKUnscaled(
     vector<dReal> vsolution;
     // TODO: lock environment?!?!
     if (!manip->FindIKSolution(IkParameterization(targetTrans), vsolution, true)) {
-        stringstream ss;
-        ss << "failed to get solution for target transform for end effector: " << targetTrans << endl;
-        RAVELOG_DEBUG(ss.str());
+        cout << "failed to get solution for target transform for end effector: " << targetTrans << endl;
         return false;
     }
 
