@@ -10,7 +10,7 @@ include_directories(${BULLET_DIR}/src
 
 set(BULLET_LIBS BulletFileLoader BulletSoftBody BulletDynamics BulletCollision LinearMath)
 
-link_directories("/usr/local/lib")
+link_directories("/usr/local/lib") # otherwise libopenrave0.5 doesn't get linked properly
 
 if (BUILD_PERCEPTION)
   find_package(PCL 1.3)
